@@ -2,11 +2,14 @@
 send alert to slack channel and users
 
 * Create a slack webhook.
+
 * change url
+
 * change channelName and users you want
 
 * define a contact in nagios
 
+```sh
 define contact {
 
     contact_name            slack             ; Short name of user
@@ -15,7 +18,9 @@ define contact {
     service_notification_commands	notify-service-by-slack
     host_notification_commands		notify-host-by-slack
 }
+```
 
+```sh
 * define a new command in nagios
 
 define command {
@@ -27,3 +32,4 @@ define command {
 		command_name			     notify-host-by-slack
 		command_line			     $USER1$/py_slack_host.py --notificationtype "$NOTIFICATIONTYPE$" --host "$HOSTNAME$" --ip "$HOSTADDRESS$" --state "$HOSTSTATE$" --ouput "$HOSTOUTPUT$" --date "$LONGDATETIME$"
 }
+```
