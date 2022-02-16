@@ -24,7 +24,7 @@ def build_parser():
 
 def slack_notif(host,notif,service,ip,date_status,state, output):
 
-    debug = True
+    debug = False
     webhook_url = 'https://hooks.slack.com/services/.....'
     if debug:
         to = ['@user1']
