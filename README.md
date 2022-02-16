@@ -20,8 +20,10 @@ define contact {
 }
 ```
 
-```sh
+
 * define a new command in nagios
+
+```sh
 
 define command {
         command_name                notify-service-by-slack
